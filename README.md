@@ -27,8 +27,4 @@ I used cookies for login to save user's information on their local web browser. 
 
 When logged in, the server will automatically redirect to the upload page unless logout.
 
-<<<<<<< HEAD
 When switching to French, I just added an "FR" in front of original texts for illustrating purpose. I used key-value pairs in every HTML page to store English and French word that's corresponding to each label.
-=======
-When switching to French, I just added an "FR" in front of original texts for illustrating purpose. I used key-value pairs in every HTML page to store English and French word that's corresponding to each label.
->>>>>>> 3cfcee267a0649148a74316e2238b825658f200e
