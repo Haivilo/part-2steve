@@ -63,7 +63,7 @@ func handleForgot(w http.ResponseWriter, r *http.Request) {
 		if r.FormValue("username") == checkUser().Username {
 			if r.FormValue("Password Now") == checkUser().Password {
 				changePassword(user{r.FormValue("username"), r.FormValue("New Password")})
-				http.Redirect(w, r, "/index", 307)
+				tpl.ExecuteTemplate(w, "index2.html", nil)
 			} else {
 				//wrong password
 				w.WriteHeader(http.StatusForbidden)
