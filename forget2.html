@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Forget Password</title>
+
+
+    <script>
+        const eng = {
+            nameinput: "username",
+            passnowinput: "password now",
+            passnewinput: "password new",
+            subButton: "submit",
+            reset: "Reset password"
+        };
+        const fr = {
+            nameinput: "FR username",
+            passnowinput: "FR password now",
+            passnewinput: "FR password new",
+            subButton: "FR submit",
+            reset: "FR Reset password"
+        };
+
+        function changeLang(langBool, langsLabel) {
+            for (var i = 0; i < langsLabel.length; i++) {
+                if (langBool == 1) {
+                    langsLabel[i].innerHTML = eng[langsLabel[i].id]
+                } else {
+                    langsLabel[i].innerHTML = fr[langsLabel[i].id]
+                }
+            }
+        }
+
+        function load() {
+            if (typeof (Storage) !== "undefined") {
+                if (!localStorage.lang) {
+                    localStorage.lang = 1;
+                }
+                changeLang(localStorage.lang, document.querySelectorAll(".lang"));
+            }
+        }
+    </script>
+
+</head>
+
+<body onload="load()">
+    <div class="container">
+        <h2 id="reset" , class="lang py-5">Reset Password</h2>
+
+        <!-- <form action="/forgetPassword" method="POST">
+      <label for="username">Username:</label><br>
+      <input type="text" id="username" name="username"><br><br>
+      <label for="PasswordNow">Password Now:</label><br>
+      <input type="text" id="PasswordNow" name="Password Now"><br><br>
+      <label for="Password Now">New Password:</label><br>
+      <input type="text" id="New Password" name="New Password"><br><br>
+      <input type="submit" value="Submit">
+    </form> -->
+
+        <form action="/forgetPassword" method="POST">
+            <div class="form-group">
+                <label for="username" id="nameinput" class="lang">acc</label>
+                <input type="text" class="form-control" id="username" name="username">
+            </div>
+            <div class="form-group">
+                <label for="PasswordNow" id="passnowinput" class="lang">now</label>
+                <input type="text" class="form-control" id="PasswordNow" name="Password Now">
+            </div>
+            <div class="form-group">
+                <label for="New Password" id="passnewinput" class="lang">new</label>
+                <input type="text" class="form-control" name="New Password">
+            </div>
+            <button type="submit" id="subButton" class="btn btn-primary lang">Submit</button>
+        </form>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="change.js"></script>
+
+</body>
+
+</html>
